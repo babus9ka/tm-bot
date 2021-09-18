@@ -6,6 +6,16 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit4aff71a19a24686f50cf7377a3618fa2
 {
+    public static $prefixesPsr0 = array (
+        'I' => 
+        array (
+            'Imagick' => 
+            array (
+                0 => __DIR__ . '/..' . '/calcinai/php-imagick/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -13,6 +23,7 @@ class ComposerStaticInit4aff71a19a24686f50cf7377a3618fa2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixesPsr0 = ComposerStaticInit4aff71a19a24686f50cf7377a3618fa2::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit4aff71a19a24686f50cf7377a3618fa2::$classMap;
 
         }, null, ClassLoader::class);
