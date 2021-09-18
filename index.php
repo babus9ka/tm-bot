@@ -10,3 +10,4 @@ $png = new Imagick($pdf[2]);
 $png->setResolution( 300, 300 );
 $png->setImageFormat( "png" );
 
+echo 123;
